@@ -2404,7 +2404,8 @@ void __init setup_nr_node_ids(void);
 static inline void setup_nr_node_ids(void) {}
 #endif
 
-#ifdef CONFIG_PROCESS_RECLAIM
+
+#if defined(CONFIG_PROCESS_RECLAIM) || defined(CONFIG_PRLMK)
 struct reclaim_param {
 	struct vm_area_struct *vma;
 	/* Number of pages scanned */
